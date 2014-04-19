@@ -387,17 +387,17 @@ bool
 priority_change(int current_pri)
 {
 	if(list_empty(&ready_list))
-			return false;
+		return false;
 	else
 	{
-			struct list_elem * ready_list_ptr = list_begin(&ready_list);
-			for(;
-			ready_list_ptr != NULL && ready_list_ptr->next != NULL && ready_list_ptr->prev != NULL;
-			ready_list_ptr = list_next(ready_list_ptr))
-			{
-				if(current_pri < list_entry(ready_list_ptr, struct thread, elem)->priority)
-						return true;
-			}
+		struct list_elem * ready_list_ptr = list_begin(&ready_list);
+		for(;
+		ready_list_ptr != NULL && ready_list_ptr->next != NULL && ready_list_ptr->prev != NULL;
+		ready_list_ptr = list_next(ready_list_ptr))
+		{
+			if(current_pri < list_entry(ready_list_ptr, struct thread, elem)->priority)
+				return true;
+		}
 	}
 	return false;
 }
@@ -408,8 +408,7 @@ priority_change(int current_pri)
 void
 thread_set_priority (int new_priority) 
 {
-  thread_current ()->priority = new_priority;
-	
+	thread_current ()->priority = new_priority;
 	if(priority_change(thread_current()->priority))
 	{
 		printf("\nthread priority is: %i(thread yield to new priority)\n", thread_current()->priority);
