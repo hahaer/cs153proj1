@@ -1,4 +1,4 @@
-qemu -hda /tmp/67D2_dCpdW.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/JVdeySPnIk.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading........
 Kernel command line: -q run alarm-priority

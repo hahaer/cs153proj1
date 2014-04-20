@@ -1,4 +1,4 @@
-qemu -hda /tmp/eMdKQAo8v_.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/C_v_c5QPKG.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading........
 Kernel command line: -q run priority-donate-nest

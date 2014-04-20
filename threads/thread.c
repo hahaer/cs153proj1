@@ -356,7 +356,7 @@ thread_yield (void)
 struct list_elem *
 thread_sleeper(struct list_elem * e)
 {
-	if(e->counter == 0)
+	if(e->counter <= 0)
 	{
 			struct list_elem * temp = e;
 			e = list_remove(e);
