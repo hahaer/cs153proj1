@@ -1,4 +1,4 @@
-qemu -hda /tmp/oph0pkEmkT.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/_n6MFQ7lBq.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading........
 Kernel command line: -q run priority-preempt
@@ -9,11 +9,17 @@ Calibrating timer...  104,755,200 loops/s.
 Boot complete.
 Executing 'priority-preempt':
 (priority-preempt) begin
+(priority-preempt) Thread high-priority iteration 0
+(priority-preempt) Thread high-priority iteration 1
+(priority-preempt) Thread high-priority iteration 2
+(priority-preempt) Thread high-priority iteration 3
+(priority-preempt) Thread high-priority iteration 4
+(priority-preempt) Thread high-priority done!
 (priority-preempt) The high-priority thread should have already completed.
 (priority-preempt) end
 Execution of 'priority-preempt' complete.
 Timer: 21 ticks
 Thread: 0 idle ticks, 21 kernel ticks, 0 user ticks
-Console: 472 characters output
+Console: 778 characters output
 Keyboard: 0 keys pressed
 Powering off...

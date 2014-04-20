@@ -1,25 +1,96 @@
 FAIL
-Kernel panic in run: PANIC at ../../threads/thread.c:301 in thread_current(): assertion `t->status == THREAD_RUNNING' failed.
-Call stack: 0xc00284e9 0xc00208bb 0xc00227c7 0xc002a0ec 0xc002a287 0xc0026d40 0xc0021a12 0xc0021b0b 0xc0020c7c 0xc0020f0f 0xc0022c14 0xc0022ce1 0xc002a105 0xc002a287 0xc0026d40 0xc0021a12 0xc0021b0b 0xc0022c1d 0xc0022ce1 0xc002bfe7 0xc002116e
-Translation of call stack:
-0xc00284e9: debug_panic (.../../lib/kernel/debug.c:38)
-0xc00208bb: thread_current (..../../threads/thread.c:304)
-0xc00227c7: lock_held_by_current_thread (...../../threads/synch.c:246)
-0xc002a0ec: acquire_console (..../lib/kernel/console.c:92)
-0xc002a287: vprintf (.../lib/kernel/console.c:131)
-0xc0026d40: printf (...uild/../../lib/stdio.c:89)
-0xc0021a12: intr_handler (..../threads/interrupt.c:378)
-0xc0021b0b: intr_entry (threads/intr-stubs.S:38)
-0xc0020c7c: next_thread_to_run (..../../threads/thread.c:574)
-0xc0020f0f: thread_block (..../../threads/thread.c:256)
-0xc0022c14: sema_down (.../../../threads/synch.c:69)
-0xc0022ce1: lock_acquire (...../../threads/synch.c:200)
-0xc002a105: acquire_console (..../lib/kernel/console.c:97)
-0xc002a287: vprintf (.../lib/kernel/console.c:131)
-0xc0026d40: printf (...uild/../../lib/stdio.c:89)
-0xc0021a12: intr_handler (..../threads/interrupt.c:378)
-0xc0021b0b: intr_entry (threads/intr-stubs.S:38)
-0xc0022c1d: sema_down (.../../../threads/synch.c:74)
-0xc0022ce1: lock_acquire (...../../threads/synch.c:200)
-0xc002bfe7: donor_thread_func (...riority-donate-chain.c:94)
-0xc002116e: kernel_thread (..../../threads/thread.c:502)
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (priority-donate-chain) begin
+  (priority-donate-chain) main got lock.
+  (priority-donate-chain) main should have priority 3.  Actual priority: 3.
+  (priority-donate-chain) main should have priority 6.  Actual priority: 6.
+  (priority-donate-chain) main should have priority 9.  Actual priority: 9.
+  (priority-donate-chain) main should have priority 12.  Actual priority: 12.
+  (priority-donate-chain) main should have priority 15.  Actual priority: 15.
+  (priority-donate-chain) main should have priority 18.  Actual priority: 18.
+  (priority-donate-chain) main should have priority 21.  Actual priority: 21.
+  (priority-donate-chain) thread 1 got lock
+  (priority-donate-chain) thread 1 should have priority 21. Actual priority: 21
+  (priority-donate-chain) thread 2 got lock
+  (priority-donate-chain) thread 2 should have priority 21. Actual priority: 21
+  (priority-donate-chain) thread 3 got lock
+  (priority-donate-chain) thread 3 should have priority 21. Actual priority: 21
+  (priority-donate-chain) thread 4 got lock
+  (priority-donate-chain) thread 4 should have priority 21. Actual priority: 21
+  (priority-donate-chain) thread 5 got lock
+  (priority-donate-chain) thread 5 should have priority 21. Actual priority: 21
+  (priority-donate-chain) thread 6 got lock
+  (priority-donate-chain) thread 6 should have priority 21. Actual priority: 21
+  (priority-donate-chain) thread 7 got lock
+  (priority-donate-chain) thread 7 should have priority 21. Actual priority: 21
+  (priority-donate-chain) thread 7 finishing with priority 21.
+  (priority-donate-chain) interloper 7 finished.
+  (priority-donate-chain) thread 6 finishing with priority 18.
+  (priority-donate-chain) interloper 6 finished.
+  (priority-donate-chain) thread 5 finishing with priority 15.
+  (priority-donate-chain) interloper 5 finished.
+  (priority-donate-chain) thread 4 finishing with priority 12.
+  (priority-donate-chain) interloper 4 finished.
+  (priority-donate-chain) thread 3 finishing with priority 9.
+  (priority-donate-chain) interloper 3 finished.
+  (priority-donate-chain) thread 2 finishing with priority 6.
+  (priority-donate-chain) interloper 2 finished.
+  (priority-donate-chain) thread 1 finishing with priority 3.
+  (priority-donate-chain) interloper 1 finished.
+  (priority-donate-chain) main finishing with priority 0.
+  (priority-donate-chain) end
+Differences in `diff -u' format:
+  (priority-donate-chain) begin
+  (priority-donate-chain) main got lock.
+- (priority-donate-chain) main should have priority 3.  Actual priority: 3.
+- (priority-donate-chain) main should have priority 6.  Actual priority: 6.
+- (priority-donate-chain) main should have priority 9.  Actual priority: 9.
+- (priority-donate-chain) main should have priority 12.  Actual priority: 12.
+- (priority-donate-chain) main should have priority 15.  Actual priority: 15.
+- (priority-donate-chain) main should have priority 18.  Actual priority: 18.
+- (priority-donate-chain) main should have priority 21.  Actual priority: 21.
+- (priority-donate-chain) thread 1 got lock
+- (priority-donate-chain) thread 1 should have priority 21. Actual priority: 21
+- (priority-donate-chain) thread 2 got lock
+- (priority-donate-chain) thread 2 should have priority 21. Actual priority: 21
+- (priority-donate-chain) thread 3 got lock
+- (priority-donate-chain) thread 3 should have priority 21. Actual priority: 21
+- (priority-donate-chain) thread 4 got lock
+- (priority-donate-chain) thread 4 should have priority 21. Actual priority: 21
+- (priority-donate-chain) thread 5 got lock
+- (priority-donate-chain) thread 5 should have priority 21. Actual priority: 21
+- (priority-donate-chain) thread 6 got lock
+- (priority-donate-chain) thread 6 should have priority 21. Actual priority: 21
+- (priority-donate-chain) thread 7 got lock
+- (priority-donate-chain) thread 7 should have priority 21. Actual priority: 21
+- (priority-donate-chain) thread 7 finishing with priority 21.
+- (priority-donate-chain) interloper 7 finished.
+- (priority-donate-chain) thread 6 finishing with priority 18.
+- (priority-donate-chain) interloper 6 finished.
+- (priority-donate-chain) thread 5 finishing with priority 15.
+- (priority-donate-chain) interloper 5 finished.
+- (priority-donate-chain) thread 4 finishing with priority 12.
+- (priority-donate-chain) interloper 4 finished.
+- (priority-donate-chain) thread 3 finishing with priority 9.
+- (priority-donate-chain) interloper 3 finished.
+- (priority-donate-chain) thread 2 finishing with priority 6.
+- (priority-donate-chain) interloper 2 finished.
+- (priority-donate-chain) thread 1 finishing with priority 3.
++ (priority-donate-chain) main should have priority 3.  Actual priority: 0.
+  (priority-donate-chain) interloper 1 finished.
++ (priority-donate-chain) main should have priority 6.  Actual priority: 0.
++ (priority-donate-chain) interloper 2 finished.
++ (priority-donate-chain) main should have priority 9.  Actual priority: 0.
++ (priority-donate-chain) interloper 3 finished.
++ (priority-donate-chain) main should have priority 12.  Actual priority: 0.
++ (priority-donate-chain) interloper 4 finished.
++ (priority-donate-chain) main should have priority 15.  Actual priority: 0.
++ (priority-donate-chain) interloper 5 finished.
++ (priority-donate-chain) main should have priority 18.  Actual priority: 0.
++ (priority-donate-chain) interloper 6 finished.
++ (priority-donate-chain) main should have priority 21.  Actual priority: 0.
++ (priority-donate-chain) interloper 7 finished.
+  (priority-donate-chain) main finishing with priority 0.
+  (priority-donate-chain) end
