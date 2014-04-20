@@ -411,7 +411,6 @@ thread_set_priority (int new_priority)
 	thread_current ()->priority = new_priority;
 	if(priority_change(thread_current()->priority))
 	{
-		printf("\nthread priority is: %i(thread yield to new priority)\n", thread_current()->priority);
 		thread_yield();
 	}
 }
