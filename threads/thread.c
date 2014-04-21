@@ -367,6 +367,7 @@ thread_sleeper(struct list_elem * e)
 	return list_next(e);
 }
 
+void
 thread_foreach (thread_action_func *func, void *aux)
 {
   struct list_elem *e;
@@ -381,7 +382,6 @@ thread_foreach (thread_action_func *func, void *aux)
     }
 }
 
-static int c_priority;
 
 //------------------------------------------Custom Function------------------------------------------------
 bool

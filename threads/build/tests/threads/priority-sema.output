@@ -1,4 +1,4 @@
-qemu -hda /tmp/uyI1FJ4wM5.dsk -m 4 -net none -nographic -monitor null
+qemu -hda /tmp/_GgB8yhoEU.dsk -m 4 -net none -nographic -monitor null
 PiLo hda1
 Loading........
 Kernel command line: -q run priority-sema
@@ -9,20 +9,30 @@ Calibrating timer...  78,540,800 loops/s.
 Boot complete.
 Executing 'priority-sema':
 (priority-sema) begin
-(priority-sema) Back in main thread.
-(priority-sema) Back in main thread.
-(priority-sema) Back in main thread.
-(priority-sema) Back in main thread.
-(priority-sema) Back in main thread.
-(priority-sema) Back in main thread.
-(priority-sema) Back in main thread.
-(priority-sema) Back in main thread.
-(priority-sema) Back in main thread.
-(priority-sema) Back in main thread.
+(priority-sema) (priority-sema) Thread priority 30 woke up.
+Back in main thread.
+(priority-sema) (priority-sema) Thread priority 29 woke up.
+Back in main thread.
+(priority-sema) (priority-sema) Thread priority 28 woke up.
+Back in main thread.
+(priority-sema) (priority-sema) Thread priority 27 woke up.
+Back in main thread.
+(priority-sema) (priority-sema) Thread priority 26 woke up.
+Back in main thread.
+(priority-sema) (priority-sema) Thread priority 25 woke up.
+Back in main thread.
+(priority-sema) (priority-sema) Thread priority 24 woke up.
+Back in main thread.
+(priority-sema) (priority-sema) Thread priority 23 woke up.
+Back in main thread.
+(priority-sema) (priority-sema) Thread priority 22 woke up.
+Back in main thread.
+(priority-sema) (priority-sema) Thread priority 21 woke up.
+Back in main thread.
 (priority-sema) end
 Execution of 'priority-sema' complete.
-Timer: 22 ticks
-Thread: 0 idle ticks, 22 kernel ticks, 0 user ticks
-Console: 751 characters output
+Timer: 24 ticks
+Thread: 0 idle ticks, 24 kernel ticks, 0 user ticks
+Console: 1191 characters output
 Keyboard: 0 keys pressed
 Powering off...
